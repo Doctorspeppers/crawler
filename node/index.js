@@ -15,12 +15,10 @@ function mysqlInsertList(listaGirafas) {
         console.log("Connected!");
         console.log(listaGirafas.length)
         for (let index = 0; index < listaGirafas.length; index++) {
-            
         var sql = "INSERT INTO franquias (id,restaurante,regiao,estado,end,cep,cidade,fone,latitude,longitude) VALUES ("+listaGirafas[index]["id"]+",'"+listaGirafas[index]["restaurante"]+"','"+listaGirafas[index]["regiao"]+"','"+listaGirafas[index]["estado"]+"','"+listaGirafas[index]["end"]+"','"+listaGirafas[index]["cep"]+"','"+listaGirafas[index]["cidade"]+"','"+listaGirafas[index]["fone"]+"',"+listaGirafas[index]["latitude"]+","+listaGirafas[index]["longitude"]+")";
         con.query(sql, function (err, result) {
             if (err) throw err;
                 console.log("1 record inserted");
-                
             })
         }
         con.end()
